@@ -1,0 +1,28 @@
+<div class="col-sm-8 col-sm-offset-2" style="border:1px solid #ccc; height:400px;padding:0;background:#2098D1 url('img/bg.jpg') center center no-repeat; background-size: cover;">
+     <div class="col-xs-12 navbar" style="border:1px solid #ccc; height:50px;background-color:#fff;border-radius:0">
+          <span style="margin-top:.8em; font-weight:bold;font-size:2em"><i>microrecharge</i></span>
+          <button class="btn btn-sm btn-default pull-right" style="margin-top:.8em;margin-left:1em">login</button>
+          <button class="btn btn-sm btn-default pull-right" style="margin-top:.8em;">signup</button>
+     </div>
+</div>
+<div class="col-sm-8 col-sm-offset-2" style="margin-bottom:2em; margin-top:-90px" >
+    <div class="col-sm-3 clearfix" style="height:180px;padding-top:10px" ng-repeat="card in cards">
+        <div class="col-xs-12" style="height:160px;border-radius:5px; border:1px solid #ccc; background-color:#fff;box-shadow:0em 0em .3em .01em #ccc" ng-click="saveCard(card)">
+             <h5>
+                 {{card.name}}
+                 <span class="pull-right">{{card.amount | currency:'NGN'}}</span>
+              </h5>
+              <div class="col-xs-12" style="margin-top:1.5em; margin-bottom:1.4em; height:2.5em; background-color:#ccc; text-align:center" ng-hide="card.visible && card == savedCard">
+                   <span style="display:inline-block; margin-top:.5em">XXXXXPINXXXXX</span>
+              </div>
+              <div class="col-xs-12" style="margin-top:1.5em; margin-bottom:1.4em; height:2.5em; background-color:#5cb85c; text-align:center" ng-show="card.visible && card == savedCard">
+                   <span style="display:inline-block; margin-top:.5em; color:#fff">{{card.asyncPin}}</span>
+              </div>
+
+              <!--Integrating the taskcoin button in the view-->
+              <taskcoin ng-hide="card.visible"></taskcoin>
+
+              <button class="btn btn-default btn-block btn-sm" ng-show="card.visible" ng-click="refresh()">refresh</button>
+        </div>
+    </div>
+</div
