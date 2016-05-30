@@ -4,7 +4,9 @@ angular.module('taskcoin' , [])
 .directive('taskcoin' ,   function(){
     return {
        restrict: 'E',
-       template : '<button class="btn btn-sm btn-primary btn-block" ng-click="clickBtn()">pay with taskcoin</button>',
+       template : '<span style="display:block; padding:.5em; text-align:center;border:2px solid #FDC740; border-radius:5px; width:100%"'+
+                     ' ng-click="clickBtn()"><img src="http://localhost:5001/img/pay.png" height="17" /> </span>',
+
        controller: 'taskcoinController'
      }
 })
