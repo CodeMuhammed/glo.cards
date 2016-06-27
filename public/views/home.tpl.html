@@ -1,11 +1,11 @@
-<div class="col-sm-8 col-sm-offset-2" style="border:1px solid #ccc; min-height:400px;padding:0">
+<div class="col-sm-8 col-sm-offset-2" style="border:1px solid #ccc; min-height:400px;padding:0;background:#2098D1 url('/img/bg.png') center center;">
      <div class="col-xs-12 navbar" style="border:1px solid #ccc; height:50px;background-color:#fff;border-radius:0">
           <span style="margin-top:.8em; font-weight:bold;font-size:2em"><img src="img/logof.png" height="40"></span>
           <button class="btn btn-sm btn-default pull-right" style="margin-top:.8em;margin-left:1em">login</button>
           <button class="btn btn-sm btn-default pull-right" style="margin-top:.8em;">signup</button>
      </div>
-     <div class="col-xs-12" >
-          <span style="display:inline-block; padding:0em 2em; font-size:4em; font-weight: bold; text-align:center">
+     <div class="col-xs-12">
+          <span style="display:inline-block; padding:0em 2em; font-size:4em; font-weight: light; text-align:center">
               Buy airtime with your <br> <typeform good-text="feedback." bad-text="credit card."></typeform>
           </span>
      </div>
@@ -26,8 +26,11 @@
 
               <!--Integrating the taskcoin button in the view-->
               <div class="col-xs-12" style="padding:0">
-                 <taskcoin ng-hide="card.visible"></taskcoin>
-
+                <span class="btn btn-default" style="display:block; padding:.5em; text-align:center;border:2px solid #FDC740; border-radius:5px; width:100%"
+                      ng-click="clickBtn()"><img src="http://localhost:5001/img/logo.png" height="17"
+                        ng-hide="card.visible">
+                       checkout
+                 </span>
                  <button class="btn btn-default btn-block btn-sm" ng-show="card.visible" ng-click="refresh()">refresh</button>
               </div>
         </div>

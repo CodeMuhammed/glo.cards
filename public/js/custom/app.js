@@ -1,4 +1,4 @@
-angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap' , 'taskcoin'])
+angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
 
 //state configuration and routing setup
 .config([
@@ -30,6 +30,21 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap' , 'taskcoin'])
 
 //============================ 2 implementation ============================
 .controller('homeController' , function($rootScope , $scope , $timeout , $interval){
+  
+     //Test api auto module
+     Taskcoin.initialize({
+          config:{
+             apiKey:'jfdkn46ndfnvklnvG4e', //The public api key generated on taskcoin.com
+             productId:'34547km4575' //this uniquely identifies the product or service you are selling
+          },
+          success:function(){//Notify you when a user completes his survey
+
+          },
+          cancel:function(){//Notify you when a user cancels a survey
+              console.log('User cancelled survey');
+          }
+     });
+
      //
      $scope.cards = [
           {
@@ -66,22 +81,6 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap' , 'taskcoin'])
      $scope.refresh = function(){
          $scope.savedCard ? $scope.savedCard.visible = false : '';
      }
-
-     //
-     $rootScope.$on('paytask:done' , function(event , args){
-           $timeout(function() {
-               $scope.savedCard.visible = true;
-           }, 0);
-     });
-
-     $rootScope.$on('paytask:cancelled' , function(event , args){
-          $timeout(function() {
-              for(var i=0; i<$scope.cards.length; i++){
-                   $scope.cards[i].visible = false;
-              }
-           }, 0);
-
-     });
 })
 
 //
@@ -92,7 +91,7 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap' , 'taskcoin'])
          restrict : 'E',
          scope : true,
          link : function(scope , elem , attrs){
-             console.log(attrs);
+             //console.log(attrs);
              scope.goodText = attrs['goodText'];
              scope.badText = attrs['badText'];
          },
