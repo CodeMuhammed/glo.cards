@@ -31,20 +31,6 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
 //============================ 2 implementation ============================
 .controller('homeController' , function($rootScope , $scope , $timeout , $interval){
   
-     //Test api auto module
-     Taskcoin.initialize({
-          config:{
-             apiKey:'jfdkn46ndfnvklnvG4e', //The public api key generated on taskcoin.com
-             productId:'34547km4575' //this uniquely identifies the product or service you are selling
-          },
-          success:function(){//Notify you when a user completes his survey
-
-          },
-          cancel:function(){//Notify you when a user cancels a survey
-              console.log('User cancelled survey');
-          }
-     });
-
      //
      $scope.cards = [
           {
@@ -72,6 +58,24 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
              visible:false
           }
      ];
+
+     //
+     $scope.myCheckout = function(card){
+         console.log(card);
+         //Test api auto module
+         Taskcoin.initialize({
+              config:{
+                 apiKey:'jfdkn46ndfnvklnvG4e', //The public api key generated on taskcoin.com
+                 productId:'34547km4575' //this uniquely identifies the product or service you are selling
+              },
+              success:function(){//Notify you when a user completes his survey
+
+              },
+              cancel:function(){//Notify you when a user cancels a survey
+                  console.log('User cancelled survey');
+              }
+         });
+     }
 
      //
      $scope.saveCard  = function(card){
