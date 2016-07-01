@@ -30,7 +30,7 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
 
 //============================ 2 implementation ============================
 .controller('homeController' , function($rootScope , $scope , $timeout , $interval){
-  
+
      //
      $scope.cards = [
           {
@@ -69,7 +69,7 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
                  productId:'34547km4575' //this uniquely identifies the product or service you are selling
               },
               success:function(){//Notify you when a user completes his survey
-
+                  alert('checkout successful');
               },
               cancel:function(){//Notify you when a user cancels a survey
                   console.log('User cancelled survey');

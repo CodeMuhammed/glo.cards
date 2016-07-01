@@ -1,17 +1,17 @@
-<div class="col-sm-8 col-sm-offset-2" style="border:1px solid #ccc; min-height:400px;padding:0;background:#2098D1 url('/img/bg.png') center center;">
+<div class="col-sm-8 col-sm-offset-2 home-container">
      <div class="col-xs-12 navbar" style="border:1px solid #ccc; height:50px;background-color:#fff;border-radius:0">
           <span style="margin-top:.8em; font-weight:bold;font-size:2em"><img src="img/logof.png" height="40"></span>
           <button class="btn btn-sm btn-default pull-right" style="margin-top:.8em;margin-left:1em">login</button>
           <button class="btn btn-sm btn-default pull-right" style="margin-top:.8em;">signup</button>
      </div>
-     <div class="col-xs-12">
-          <span style="display:inline-block; padding:0em 2em; font-size:4em; font-weight: light; text-align:center">
+     <div class="col-xs-12 tag-line">
+          <span>
               Buy airtime with your <br> <typeform good-text="feedback." bad-text="credit card."></typeform>
           </span>
      </div>
 </div>
 <div class="col-sm-8 col-sm-offset-2" style="margin-bottom:2em; margin-top:-90px" >
-    <div class="col-sm-3 clearfix" style="height:300px;padding:.5em; padding-top:10px" ng-repeat="card in cards">
+    <div class="col-xs-10 col-sm-3 col-xs-offset-1 col-sm-offset-0" style="height:300px;padding:.5em; padding-top:10px" ng-repeat="card in cards">
         <div class="col-xs-12" style="height:200px;border-radius:5px; border:1px solid #ccc; background-color:#fff;box-shadow:0em 0em .3em .01em #ccc" ng-click="saveCard(card)">
              <h5 style="padding:.3em">
                  {{card.name}}

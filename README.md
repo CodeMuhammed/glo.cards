@@ -1,2 +1,1 @@
-# glo.cards
-glo.cards: A micro-recharge platform powered by taskcoin
+#Minicards - micro-recharge online using taskcoin
