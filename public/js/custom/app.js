@@ -73,6 +73,7 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
               },
               cancel:function(){//Notify you when a user cancels a survey
                   console.log('User cancelled survey');
+                  alert('checkout cancelled');
               }
          });
      }
