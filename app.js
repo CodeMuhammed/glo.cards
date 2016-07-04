@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname , 'public')));
 
 //choose the version of taskcoin api url based on the environment
 app.use('/taskcoinapi' , function(req , res){
-	    var baseUrl =  process.NODE_ENV == 'production'? 'https://taskcoin-demo.herokuapp.com' : 'http://localhost:5001';
+	    var baseUrl =  process.env.NODE_ENV == 'production'? 'https://taskcoin-demo.herokuapp.com' : 'http://localhost:5001';
 			res.status(200).send({
 				  api: baseUrl+'/js/vendors/taskcoin.js',
 				  logo: baseUrl+'/img/logo.png'
