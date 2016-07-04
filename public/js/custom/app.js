@@ -28,9 +28,31 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
     }
 ])
 
-//============================ 2 implementation ============================
-.controller('homeController' , function($rootScope , $scope , $timeout , $interval){
+//
+.factory('taskcoinApi' , function($q , $http){
+      function getConfig(){
+          var promise = $q.defer();
+          $http({
+              method:'GET',
+              url:'/taskcoinapi'
+          })
+          .success(function(config){
+              promise.resolve(config);
+          });
+          return promise.promise;
+      }
 
+      return{
+          getConfig:getConfig
+      }
+})
+
+//============================ 2 implementation ============================
+.controller('homeController' , function($rootScope , $scope , $timeout , $interval, taskcoinApi){
+     taskcoinApi.getConfig().then(function(config){
+         console.log(config);
+         $scope.taskcoinlogo = config.logo;
+     });
      //
      $scope.cards = [
           {
