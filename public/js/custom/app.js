@@ -38,6 +38,9 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
           })
           .success(function(config){
               promise.resolve(config);
+          })
+          .error(function(err){
+              promise.reject(err);
           });
           return promise.promise;
       }
@@ -52,6 +55,8 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
      taskcoinApi.getConfig().then(function(config){
          console.log(config);
          $scope.taskcoinlogo = config.logo;
+     } , function(err){
+         console.log('taskcoin config not loaded');
      });
      //
      $scope.cards = [
