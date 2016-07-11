@@ -98,7 +98,7 @@ angular.module('microRecharge' , ['ui.router' ,'mgcrea.ngStrap'])
      $scope.myCheckout = function(card){
          console.log(card);
          //Test api auto module
-         Taskcoin.initialize({
+         Taskcoin.checkout({
               config:{
                  apiKey:'jfdkn46ndfnvklnvG4e', //The public api key generated on taskcoin.com
                  productId:'34547km4575' //this uniquely identifies the product or service you are selling
